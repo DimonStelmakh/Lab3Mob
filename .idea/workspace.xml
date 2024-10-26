@@ -21,17 +21,9 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dbcaa95d-130b-4f51-b16e-8c1371790a83" name="Changes" comment="">
+    <list default="true" id="dbcaa95d-130b-4f51-b16e-8c1371790a83" name="Changes" comment="input updated for lab3">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/androidTest/java/com/example/lab1/ExampleInstrumentedTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/androidTest/java/com/example/lab3/ExampleInstrumentedTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/lab1/MainMenuActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/lab3/MainMenuActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/lab1/Task1Activity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/lab3/Task1Activity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/lab1/ui/theme/Color.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/lab3/ui/theme/Color.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/lab1/ui/theme/Theme.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/lab3/ui/theme/Theme.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/lab1/ui/theme/Type.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/lab3/ui/theme/Type.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_task1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_task1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/example/lab1/ExampleUnitTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/com/example/lab3/ExampleUnitTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/lab3/Task1Activity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/lab3/Task1Activity.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -289,7 +281,15 @@
       <option name="project" value="LOCAL" />
       <updated>1728737548973</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="input updated for lab3">
+      <option name="closed" value="true" />
+      <created>1729967128393</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1729967128394</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -302,6 +302,8 @@
     <MESSAGE value="Lab 2 has been finished and tested out" />
     <MESSAGE value="reduntant commented have been taken away" />
     <MESSAGE value="task2 activity has been taken away from Android Manifest" />
-    <option name="LAST_COMMIT_MESSAGE" value="task2 activity has been taken away from Android Manifest" />
+    <MESSAGE value="getting data input updated for lab 3" />
+    <MESSAGE value="input updated for lab3" />
+    <option name="LAST_COMMIT_MESSAGE" value="input updated for lab3" />
   </component>
 </project>

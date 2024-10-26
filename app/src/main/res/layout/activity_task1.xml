@@ -42,13 +42,13 @@
         android:id="@+id/coaTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Вугілля"
+        android:text="Було:"
         android:textStyle="bold"
         android:paddingTop="16dp"
         android:textSize="16sp" />
 
     <TextView
-        android:id="@+id/coalSolidParticlesEmission"
+        android:id="@+id/moneyBalance"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
