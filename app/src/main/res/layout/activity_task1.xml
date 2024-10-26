@@ -7,22 +7,28 @@
     android:padding="16dp">
 
     <EditText
-        android:id="@+id/coalVolume"
+        android:id="@+id/averageDayPower"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Обсяг донецького газового вугілля марки ГР, т" />
+        android:hint="Середньодобова потужність сонячної електростанції, МВт" />
 
     <EditText
-        android:id="@+id/oilFuelVolume"
+        android:id="@+id/forecastRootMeanSquareDeviation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Обсяг високосірчистого мазуту марки 40, т" />
+        android:hint="Середньоквадратичне відхилення системи прогнозування, МВт" />
 
     <EditText
-        android:id="@+id/naturalGasVolume"
+        android:id="@+id/targetForecastRootMeanSquareDeviation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Обсяг природного газу із газопроводу Уренгой-Ужгород, м3" />
+
+    <EditText
+        android:id="@+id/electricityPrice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Вартість електроенергії, грн / кВт*год" />
 
     <Button
         android:id="@+id/calculateButton"

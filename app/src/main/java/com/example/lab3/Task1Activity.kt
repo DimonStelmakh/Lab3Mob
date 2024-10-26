@@ -1,4 +1,4 @@
-package com.example.lab1
+package com.example.lab3
 
 import android.os.Bundle
 import android.widget.EditText
@@ -11,17 +11,21 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.lab1.ui.theme.Lab1Theme
+import com.example.lab3.ui.theme.Lab1Theme
 import kotlin.math.pow
+import kotlin.math.exp
+import kotlin.math.sqrt
+import kotlin.math.PI
+
 
 class Task1Activity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_task1)
 
-        val inputCoalVolume = findViewById<EditText>(R.id.coalVolume)
-        val inputOilFuelVolume = findViewById<EditText>(R.id.oilFuelVolume)
-        val inputNaturalGasVolume = findViewById<EditText>(R.id.naturalGasVolume)
+        val inputAverageDayPower = findViewById<EditText>(R.id.averageDayPower)
+        val inputForecastRootMeanSquareDeviation = findViewById<EditText>(R.id.forecastRootMeanSquareDeviation)
+        val inputTargetForecastRootMeanSquareDeviation = findViewById<EditText>(R.id.targetForecastRootMeanSquareDeviation)
 
         val calculateButton = findViewById<Button>(R.id.calculateButton)
 
@@ -44,9 +48,9 @@ class Task1Activity : ComponentActivity() {
                 val coalCombustibleSubstancesInFlyAshPercentage = 1.5
 //                val coalCombustibleSubstancesInSlagPercentage = 0.5
 
-                val coalVolume = inputCoalVolume.text.toString().toDouble()
-                val oilFuelVolume = inputOilFuelVolume.text.toString().toDouble()
-                val naturalGasVolume = inputNaturalGasVolume.text.toString().toDouble()
+                val averageDayPower = inputAverageDayPower.text.toString().toDouble()
+                val forecastRootMeanSquareDeviation = inputForecastRootMeanSquareDeviation.text.toString().toDouble()
+                val targetForecastRootMeanSquareDeviation = inputTargetForecastRootMeanSquareDeviation.text.toString().toDouble()
 
                 val coalSolidParticlesEmissionCalculated = (10.0.pow(6.0) / coalWorkingLHV) * coalFlyAshPercentage * (coalWorkingAshPercentage / (100 - coalCombustibleSubstancesInFlyAshPercentage)) * (1 - ashCollectorEfficiency)
                 val coalGrossEmissionCalculated = 10.0.pow(-6.0) * coalSolidParticlesEmissionCalculated * coalWorkingLHV * coalVolume
@@ -80,6 +84,11 @@ class Task1Activity : ComponentActivity() {
             }
         }
     }
+}
+
+fun calculatePd(p: Double, pC: Double, sigma1: Double): Double {
+    val exponent = -((p - pC).pow(2)) / (2 * sigma1.pow(2))
+    return (1 / (sigma1 * sqrt(2 * PI))) * exp(exponent)
 }
 
 @Composable
