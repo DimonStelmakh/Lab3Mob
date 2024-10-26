@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/coalVolume"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Обсяг донецького газового вугілля марки ГР, т" />
+
+    <EditText
+        android:id="@+id/oilFuelVolume"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Обсяг високосірчистого мазуту марки 40, т" />
+
+    <EditText
+        android:id="@+id/naturalGasVolume"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Обсяг природного газу із газопроводу Уренгой-Ужгород, м3" />
+
+    <Button
+        android:id="@+id/calculateButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Розрахувати" />
+
+    <TextView
+        android:id="@+id/coaTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Вугілля"
+        android:textStyle="bold"
+        android:paddingTop="16dp"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/coalSolidParticlesEmission"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/coalGrossEmission"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/oilFuelTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Мазут"
+        android:textStyle="bold"
+        android:paddingTop="16dp"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/oilFuelSolidParticlesEmission"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/oilFuelGrossEmission"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/naturalGasTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Природний газ"
+        android:textStyle="bold"
+        android:paddingTop="16dp"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/naturalGasSolidParticlesEmission"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/naturalGasGrossEmission"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>
