@@ -12,10 +12,12 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.lab3.ui.theme.Lab1Theme
+
 import kotlin.math.pow
 import kotlin.math.exp
 import kotlin.math.sqrt
 import kotlin.math.PI
+import kotlin.math.round
 
 
 class Task1Activity : ComponentActivity() {
@@ -31,13 +33,7 @@ class Task1Activity : ComponentActivity() {
         val calculateButton = findViewById<Button>(R.id.calculateButton)
 
         val moneyBalance = findViewById<TextView>(R.id.moneyBalance)
-//        val coalGrossEmission = findViewById<TextView>(R.id.coalGrossEmission)
-
-        val oilFuelSolidParticlesEmission = findViewById<TextView>(R.id.oilFuelSolidParticlesEmission)
-        val oilFuelGrossEmission = findViewById<TextView>(R.id.oilFuelGrossEmission)
-
-        val naturalGasSolidParticlesEmission = findViewById<TextView>(R.id.naturalGasSolidParticlesEmission)
-        val naturalGasGrossEmission = findViewById<TextView>(R.id.naturalGasGrossEmission)
+        val newMoneyBalance = findViewById<TextView>(R.id.newMoneyBalance)
 
         calculateButton.setOnClickListener {
             try {
@@ -48,15 +44,24 @@ class Task1Activity : ComponentActivity() {
                 val targetForecastRootMeanSquareDeviation = inputTargetForecastRootMeanSquareDeviation.text.toString().toDouble()
                 val electricityPrice = inputElectricityPrice.text.toString().toDouble()
 
-                val shareWithoutImbalancesCalculated = calculateShareWithoutImbalance(averageDayPower, forecastRootMeanSquareDeviation, allowedMistakePercentage.toDouble())
+                val shareWithoutImbalancesCalculated = round(calculateShareWithoutImbalance(averageDayPower, forecastRootMeanSquareDeviation, allowedMistakePercentage.toDouble()/100)*100)/100
 
-                val profit = calculateElectricityValue(calculateElectricityQuantity(averageDayPower, shareWithoutImbalancesCalculated/100), electricityPrice)
-                val loss = calculateElectricityValue(calculateElectricityQuantity(averageDayPower, (1-shareWithoutImbalancesCalculated/100)), electricityPrice)
+                val profit = calculateElectricityValue(calculateElectricityQuantity(averageDayPower, shareWithoutImbalancesCalculated), electricityPrice)
+                val loss = calculateElectricityValue(calculateElectricityQuantity(averageDayPower, (1-shareWithoutImbalancesCalculated)), electricityPrice)
 
                 val initiateMoneyBalanceCalculated = profit - loss
 
-                moneyBalance.text = "Баланс доходу/втрати, грн: %.2f".format(initiateMoneyBalanceCalculated)
-//                coalGrossEmission.text = "Валовий викид при спалюванні: %.2f".format(coalGrossEmissionCalculated)
+                moneyBalance.text = "Баланс доходу/втрати, грн: %.0f".format(initiateMoneyBalanceCalculated)
+
+                val newShareWithoutImbalancesCalculated = round(calculateShareWithoutImbalance(averageDayPower, targetForecastRootMeanSquareDeviation, allowedMistakePercentage.toDouble()/100)*100)/100
+
+                val newProfit = calculateElectricityValue(calculateElectricityQuantity(averageDayPower, newShareWithoutImbalancesCalculated), electricityPrice)
+                val newLoss = calculateElectricityValue(calculateElectricityQuantity(averageDayPower, (1-newShareWithoutImbalancesCalculated)), electricityPrice)
+
+                val newMoneyBalanceCalculated = newProfit - newLoss
+
+                newMoneyBalance.text = "Баланс доходу/втрати, грн: %.0f".format(newMoneyBalanceCalculated)
+
 
             } catch (e: Exception) {
                 Toast.makeText(this, "Будь ласка, введіть правильні числові значення!",
@@ -72,7 +77,7 @@ fun calculatePd(p: Double, pC: Double, sigma1: Double): Double {
 }
 
 fun calculateShareWithoutImbalance(pC: Double, sigma1: Double, delta: Double): Double {
-    return trapezoidalIntegral(pC, sigma1, pC-delta, pC+delta, 1000)
+    return trapezoidalIntegral(pC, sigma1, pC-pC*delta, pC+pC*delta, 1000)
 }
 
 fun trapezoidalIntegral(
@@ -99,7 +104,7 @@ fun calculateElectricityQuantity(pC: Double, deltaW: Double): Double {
 }
 
 fun calculateElectricityValue(W: Double, cost: Double): Double {
-    return W * cost
+    return W*1000 * cost
 }
 
 @Composable

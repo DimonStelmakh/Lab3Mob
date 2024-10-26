@@ -22,7 +22,7 @@
         android:id="@+id/targetForecastRootMeanSquareDeviation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Обсяг природного газу із газопроводу Уренгой-Ужгород, м3" />
+        android:hint="Вдосконалене середньоквадратичне відхилення системи прогнозування, МВт" />
 
     <EditText
         android:id="@+id/electricityPrice"
@@ -39,7 +39,7 @@
         android:text="Розрахувати" />
 
     <TextView
-        android:id="@+id/coaTitle"
+        android:id="@+id/wasTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Було:"
@@ -53,46 +53,18 @@
         android:layout_height="wrap_content" />
 
     <TextView
-        android:id="@+id/coalGrossEmission"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-    <TextView
-        android:id="@+id/oilFuelTitle"
+        android:id="@+id/willBeTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Мазут"
+        android:text="Стало:"
         android:textStyle="bold"
         android:paddingTop="16dp"
         android:textSize="16sp" />
 
     <TextView
-        android:id="@+id/oilFuelSolidParticlesEmission"
+        android:id="@+id/newMoneyBalance"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
-    <TextView
-        android:id="@+id/oilFuelGrossEmission"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-    <TextView
-        android:id="@+id/naturalGasTitle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Природний газ"
-        android:textStyle="bold"
-        android:paddingTop="16dp"
-        android:textSize="16sp" />
-
-    <TextView
-        android:id="@+id/naturalGasSolidParticlesEmission"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-    <TextView
-        android:id="@+id/naturalGasGrossEmission"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
 
 </LinearLayout>
